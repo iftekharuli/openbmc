@@ -1,0 +1,46 @@
+.net-config__form {
+  .dropdown__button {
+    margin-bottom: 1.2em;
+  }
+  .dropdown__list {
+    margin-top: -17px;
+  }
+  .dropdown__button {
+    width: 200px;
+    margin-top: 0px;
+    text-align: left;
+  }
+  input {
+    height: 2.1em;
+    margin-bottom: 1.2em;
+  }
+  label {
+    min-width: 300px;
+  }
+  fieldset {
+    padding-left: 1.8em;
+  }
+  .net-config__static-ip-wrap {
+    padding-left: 0;
+    padding-top: 1em;
+    display: block;
+    label {
+      min-width: 250px;
+    }
+  }
+  .control-radio {
+    margin-top: 1em;
+    margin-left: .7em;
+    font-weight: 700;
+  }
+  .network-config__submit-wrapper {
+    width: 100%;
+    margin-top: 3em;
+    padding-top: 1em;
+    border-top: 1px solid $medgrey;
+    button {
+      float: right;
+      margin: .5em;
+    }
+  }
+}

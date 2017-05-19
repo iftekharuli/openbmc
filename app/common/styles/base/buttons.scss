@@ -1,0 +1,122 @@
+button, .button, input[type="submit"], .submit {
+  font-size: 1em;
+  @include fontFamilyBold;
+  text-transform: none;
+  border-radius: 3px;
+  padding: .5rem 2rem .5rem;
+  height: auto;
+  border: 0;
+  overflow: hidden;
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.disabled {
+  button, .button, input[type="submit"] {
+    opacity: 0.2;
+    color: $btn__disabled-txt;
+    &:hover {
+      cursor: default;
+      background: transparent;
+    }
+  }
+}
+
+.btn-primary,
+input[type="submit"] {
+  color: $primebtn__text;
+  background: $primebtn__bg;
+  min-height: 40px;
+  &:hover {
+    background: lighten($primebtn__bg, 8%);
+    @include fastTransition-all;
+  }
+  &.disabled {
+    background: $btn__disabled-bg;
+    color: $btn__disabled-txt;
+    @include fastTransition-all;
+    &:hover {
+      cursor: default;
+    }
+  }
+  i { // button symbol
+    font-style: normal;
+    text-transform: none;
+    font-size: 1.5em;
+    transform: rotate(80deg);
+    display: inline-block;
+  }
+  img{
+    width: 18px;
+    height: 18px;
+    display: inline-block;
+  }
+}
+.btn-secondary {
+  color: $secbtn__text;
+  background: transparent;
+  border: 2px solid $secbtn__border;
+  min-height: 40px;
+  &:hover {
+    background: $lightbg__accent;
+    cursor: pointer;
+    background: $secbtn__bg;
+    @include fastTransition-all;
+  }
+  &.disabled {
+    border: 2px solid $lightgrey;
+    background: $btn__disabled-bg;
+    @include fastTransition-all;
+    &:hover {
+      background: $btn__disabled-bg;
+    }
+  }
+  i { // button symbol
+    font-style: normal;
+    font-weight: 400;
+    text-transform: none;
+    font-size: 1.5em;
+    transform: rotate(80deg) translate(-2px);
+    display: inline-block;
+    vertical-align: middle;
+  }
+  img{
+    width: 18px;
+    height: 18px;
+    display: inline-block;
+    margin-right: .5em;
+    margin-top: -3px;
+  }
+}
+
+.btn-pop-out {
+  position: relative;
+  padding: 0 0 1em 2em;
+  color: $black;
+  &:hover {
+    text-decoration: underline;
+  }
+  &:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 3px;
+    width: 25px;
+    height: 20px;
+    display: inline-block;
+    border: 1px solid $black;
+    border-top: 4px solid $black;
+  }
+  &:after {
+    content: '\2794';
+    position: absolute;
+    transform: rotate(-45deg);
+    font-size: .9em;
+    font-weight: 700;
+    vertical-align: middle;
+    display: inline-block;
+    left: 11px;
+    top: 4px;
+  }
+}

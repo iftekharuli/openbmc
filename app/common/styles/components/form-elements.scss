@@ -1,0 +1,267 @@
+// Drop downs
+.dropdown__button {
+  position: relative;
+  padding: .5em .8em;
+  margin-top: -10px;
+  border: 1px solid $medgrey;
+  min-width: 70px;
+  padding-right: 25px;
+  font-weight: 400;
+  &.active,
+  &:hover {
+    background: $dropdown__focus-bg;
+  }
+  &:after {
+    content: '\25B8';
+    display: inline-block;
+    margin-left: 5px;
+    font-size: .8em;
+    transform: translateY(-50%) rotate(90deg);
+    color: $lightbg__primary;
+    position: absolute;
+    right: .8em;
+    top: 50%;
+  }
+}
+
+.dropdown__wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown__list {
+  position: absolute;
+  z-index: 100;
+  right: 0;
+  top: 100%;
+  background: $white;
+  padding: 0;
+  width: 100%;
+  border: 1px solid $lightbg__grey;
+  margin-top: -5px;
+  box-shadow: 0 4px 10px -2px $lightgrey;
+  li {
+    list-style-type: none;
+  }
+  button {
+    padding: 1em 1em 1em 1.8em;
+    text-align: left;
+    width: 100%;
+    font-weight: 400;
+    &:hover {
+      background: $dropdown__focus-bg;
+    }
+  }
+}
+
+.dropdown__list {
+  min-width: 230px;
+}
+.dropdown__list.multi-select {
+  > .active {
+    position: relative;
+    &:before {
+      content: '\2713';
+      position: absolute;
+      display: inline-block;
+      top: 50%;
+      left: .6em;
+      color: $lightbg__primary;
+      transform: translateY(-50%);
+    }
+  }
+}
+
+.dropdown__date {
+  width: 430px;
+  .row {
+    padding: 1em;
+    margin-right: 0;
+  }
+  input {
+    max-width: 170px;
+    color: $darkgrey;
+  }
+}
+
+
+
+// Checkbox
+
+.control-check,
+.control-radio {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 15px;
+  padding-top: 7px;
+  cursor: pointer;
+  line-height: initial;
+}
+
+.control-check input {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+}
+
+.control__indicator {
+  position: absolute;
+  top: 2px;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  background: $white;
+  border: 1px solid $medgrey;
+}
+
+/* Hover and focus states */
+.control-check:hover input ~ .control__indicator,
+.control-check input:focus ~ .control__indicator {
+  border: 1px solid $primebtn__bg;
+}
+
+/* Checked state */
+.control-check input:checked ~ .control__indicator {
+  background: $primebtn__bg;
+
+}
+
+/* Hover state whilst checked */
+.control-check:hover input:not([disabled]):checked ~ .control__indicator {
+  background: $primebtn__bg;
+}
+
+/* Disabled state */
+.control-check input:disabled ~ .control__indicator {
+  pointer-events: none;
+  opacity: .6;
+  background: #ccc;
+  border: 1px solid $white;
+}
+
+.control-check:hover > input:disabled ~ .control__indicator {
+  outline: 0;
+}
+
+/* Check mark */
+.control__indicator:after,
+.control-check input:not(:checked){
+  position: absolute;
+  display: none;
+  content: '';
+}
+
+/* Show check mark */
+.control-check input:checked ~ .control__indicator:after {
+  display: block;
+}
+
+/* Checkbox tick */
+.control-check .control__indicator:after {
+  top: 3px;
+  left: 7px;
+  width: 5px;
+  height: 10px;
+  transform: rotate(45deg);
+  border: solid $white;
+  border-width: 0 2px 2px 0;
+}
+
+/* Disabled tick colour */
+.control-check input:disabled ~ .control__indicator:after {
+  border-color: $white;
+  color: $white;
+}
+
+// Radio Buttons
+.control-radio {
+  padding-left: 3em;
+}
+.control-radio.disabled:hover {
+  cursor: default;
+}
+.control-radio .control__indicator {
+  position: absolute;
+  top: 2px;
+  left: 0;
+  width: 30px;
+  height: 30px;
+  background: $white;
+  border: 2px solid $darkgrey;
+}
+.control-radio input{
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+}
+
+.control-radio .control__indicator {
+  border-radius: 50%;
+}
+
+/* Hover and focus states */
+.control-radio input:focus ~ .control__indicator {
+  background: $primebtn__bg;
+  outline: 1px solid $primebtn__bg;
+  outline-offset: 3px;
+}
+
+.control-radio input:checked ~ .control__indicator {
+  background: $lightbg__accent;
+  border: 2px solid $primebtn__bg;
+}
+
+/* Disabled state */
+.control-radio input:disabled ~ .control__indicator{
+  pointer-events: none;
+  opacity: .6;
+  background: #ccc;
+  border: 1px solid $medgrey;
+}
+
+.control-radio:hover > input:disabled ~ .control__indicator{
+  outline: 0;
+}
+
+.control-radio:hover input:disabled {
+  cursor: default;
+}
+
+/* mark */
+.control__indicator:after {
+  position: absolute;
+  display: none;
+  content: '';
+}
+
+/* Show mark */
+.control-radio input:checked ~ .control__indicator:after {
+  display: block;
+}
+
+/* Disabled tick colour */
+.control-radio input:disabled ~ .control__indicator:after{
+  border-color: $white;
+  color: $white;
+}
+
+/* Radio button inner circle */
+.control-radio .control__indicator:after {
+  top: 4px;
+  left: 4px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: $primebtn__bg;
+}
+
+.control-radio:hover .control__indicator:after {
+  display: block;
+}
+
+/* Disabled circle colour */
+.control-radio input:disabled ~ .control__indicator:after {
+  background: #7b7b7b;
+  width: 20px;
+  height: 20px;
+}
