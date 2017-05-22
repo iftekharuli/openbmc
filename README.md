@@ -5,14 +5,14 @@ The OpenBMC project can be described as a Linux distribution for embedded device
 Make sure you have node.js installed in your system. You can install it from https://nodejs.org/en/ 
 We recommend v7.10.0 or higher. Once installed, you can check the version number by 
 
-'node -v'
+`node -v`
 
 ## Repo
 The code repo can be found in
-'https://github.com/iftekharuli/openbmc'
+`https://github.com/iftekharuli/openbmc`
 
 ## Download the source
-'git clone git@github.com:iftekharuli/openbmc.git'
+`git clone git@github.com:iftekharuli/openbmc.git`
 
 ## Installation
 You can go to project directory and run- 
