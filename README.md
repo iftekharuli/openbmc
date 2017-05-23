@@ -25,6 +25,6 @@ You can go to project directory and run-
 `npm run-script distribution`
 
 ## Running
-'npm run-script serve'
+`npm run-script serve`
 
 This will run it locally in http://localhost:8080
